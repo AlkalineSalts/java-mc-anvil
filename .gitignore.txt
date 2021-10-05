@@ -1,8 +1,0 @@
-*.bluej
-chunk.txt
-compressedChunk.txt
-Main.java
-Main.class
-Main.ctxt
-level.txt
-data.txt.DS_Store
