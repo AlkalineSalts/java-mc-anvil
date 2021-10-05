@@ -18,7 +18,7 @@ public class Dimension
     private int shiftZ;
     private File dimensionFile;
     /**
-     * Constructor for objects of class Dimension
+     * 
      */
     public Dimension(File dimFile) 
     {
@@ -56,9 +56,11 @@ public class Dimension
     }
      /**
      * Gets a subdimension of the given dimension
-     *
+     * Throws a DimensionException if the dimensions given do not fit within 
+     * the given dimension
      * 
-     * 
+     * @param d the dimension that a subdimension will be a subset of
+     * @param minX the minimum x coord
      */
     
     public Dimension(Dimension d, int minX, int minZ, int maxX, int maxZ) {
@@ -115,6 +117,13 @@ public class Dimension
     }
     
     */
+    /**
+     * Determines if the region exists in this dimension
+     * 
+     * @param x the x coordinate of the region
+     * @param z the z coordinate of the region
+     * @return if the region exists
+     */
     public boolean regionExists(int x, int z) {
     x += shiftX;
     z += shiftZ;
@@ -144,6 +153,7 @@ public class Dimension
         int[] xz = {high[0] + regions.length, high[1] + regions[0].length};
         return xz;
     }
+    
     @Override
     public String toString() {
     StringBuilder sb = new StringBuilder();
