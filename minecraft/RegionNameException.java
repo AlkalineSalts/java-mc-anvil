@@ -2,10 +2,10 @@ package minecraft;
 
 
 /**
- * Write a description of class TagDataFormatException here.
+ * Represents a problem with region names.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Will Rantis
+ * @version 10/5/21
  */
 public class RegionNameException extends RuntimeException
 {

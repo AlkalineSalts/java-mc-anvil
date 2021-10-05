@@ -269,19 +269,20 @@ public class Chunk extends NBTData
     }
     public int getHeightMap(int x, int z) {
         //MOTION_BLOCKING:The highest block that blocks motion or contains a fluid.
+        if (x >= 16 || x < 0 || z >= 16 || z < 0) {return -1;}
         return heightMap[16 * z + x] - 1;
     }
     private void updateTimeStamp() {
         secondsPastEpoch = (int)(System.currentTimeMillis()/1000);
     }
     public void setBiome(Biome biome, int x, int z) {
-        if (x > 16 || x < 0 || z > 16 || z < 0) {return;}
+        if (x >= 16 || x < 0 || z >= 16 || z < 0) {return;}
         Named_NBT_Tag biomeArray = levelTag.getSubtagByName("Biomes");
         byte[] bArray = biomeArray.getByteArray();
         bArray[16 * z + x] = biome.getId();
     }
     public Biome getBiome(int x, int z) {
-        if (x > 16 || x < 0 || z > 16 || z < 0) {return null;}
+        if (x >= 16 || x < 0 || z >= 16 || z < 0) {return null;}
         Named_NBT_Tag biomeArray = levelTag.getSubtagByName("Biomes");
         byte[] bArray = biomeArray.getByteArray();
         byte id = bArray[16 * z + x];

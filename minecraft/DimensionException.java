@@ -2,10 +2,10 @@ package minecraft;
 
 
 /**
- * Write a description of class DimensionException here.
+ * Represents a problem concerning a dimension.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Will Rantis
+ * @version 10/5/21
  */
 public class DimensionException extends ArrayIndexOutOfBoundsException
 {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=RegionNameException
-comment0.text=\n\ Write\ a\ description\ of\ class\ TagDataFormatException\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Represents\ a\ problem\ with\ region\ names.\n\n\ @author\ Will\ Rantis\n\ @version\ 10/5/21\n
 comment1.params=msg
 comment1.target=RegionNameException(java.lang.String)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ TagDataFormatException\n

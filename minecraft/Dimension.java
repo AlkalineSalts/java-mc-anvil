@@ -4,10 +4,10 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.util.Scanner;
 /**
- * Write a description of class Dimension here.
+ * Represents an array of region files.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Will Rantis
+ * @version 10/5/21
  */
 public class Dimension
 {
@@ -17,8 +17,9 @@ public class Dimension
     private int shiftX;
     private int shiftZ;
     private File dimensionFile;
-    /**
+    /**Creates a Dimension.
      * 
+     * @param dimFile the file which contains .mca files
      */
     public Dimension(File dimFile) 
     {
@@ -55,12 +56,15 @@ public class Dimension
        }
     }
      /**
-     * Gets a subdimension of the given dimension
+     * Gets a subdimension of the given dimension.
      * Throws a DimensionException if the dimensions given do not fit within 
-     * the given dimension
+     * the given dimension.
      * 
      * @param d the dimension that a subdimension will be a subset of
-     * @param minX the minimum x coord
+     * @param minX the lower of the x coordinates
+     * @param minZ the lower of the z coordinates
+     * @param mazX the higher of the x coordinates
+     * @param maxZ the higher of the z coordinates
      */
     
     public Dimension(Dimension d, int minX, int minZ, int maxX, int maxZ) {
@@ -118,7 +122,7 @@ public class Dimension
     
     */
     /**
-     * Determines if the region exists in this dimension
+     * Determines if the region exists in this dimension.
      * 
      * @param x the x coordinate of the region
      * @param z the z coordinate of the region
@@ -132,6 +136,15 @@ public class Dimension
     if (regions[x][z] == null) {return false;}
     else {return true;}
     }
+    /**
+     * Gets the region if it exists in this dimension.
+     * 
+     * If the region does not exist, returns null.
+     * 
+     * @param x the x coordinate of the region
+     * @param z the z coordinate of the region
+     * @return if the region exists
+     */
     public Region getRegion(int x, int z) {
         x += shiftX;
         z += shiftZ;
@@ -144,16 +157,34 @@ public class Dimension
         return new Region(rFile);
         } catch (IOException e) {return null;}
     }
+    /**
+     * Gets the lowest bound of the square dimension. Region may or may 
+     * not exists.
+     * 
+     * @return returns an int[2] with int[0] being x coordinate and int[1] 
+     * being the z.
+     */
     public int[] getLowestRegion() {
         int[] xz = {0-shiftX, 0-shiftZ};
         return xz;
     }
+    /**
+     * Gets the highest bound of the square dimension. Region may or may 
+     * not exists.
+     * 
+     * @return returns an int[2] with int[0] being x coordinate and int[1] 
+     * being the z.
+     */
     public int[] getHighestRegion() {
         int[] high = getLowestRegion();
         int[] xz = {high[0] + regions.length, high[1] + regions[0].length};
         return xz;
     }
-    
+    /**
+     * String is the view of the dimension.
+     * The x coordinates are the rows, the z coordinate are the columns.
+     * An x represents a region, a zero represents a non-existant region.
+     */
     @Override
     public String toString() {
     StringBuilder sb = new StringBuilder();
