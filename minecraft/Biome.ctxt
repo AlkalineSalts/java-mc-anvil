@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Biome
+comment1.params=id
+comment1.target=Biome(byte)
+comment2.params=
+comment2.target=byte\ getId()
+numComments=3

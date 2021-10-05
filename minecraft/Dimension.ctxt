@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Dimension
+comment0.text=\n\ Write\ a\ description\ of\ class\ Dimension\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=dimFile
+comment1.target=Dimension(java.io.File)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Dimension\n
+comment2.params=d\ minX\ minZ\ maxX\ maxZ
+comment2.target=Dimension(Dimension,\ int,\ int,\ int,\ int)
+comment2.text=\n\ Gets\ a\ subdimension\ of\ the\ given\ dimension\n\n\ \n\ \n
+comment3.params=x\ z
+comment3.target=boolean\ regionExists(int,\ int)
+comment3.text=\n\ \ \ \ public\ Block\ getBlock(int\ globalX,\ int\ globalY,\ int\ globalZ)\ {\n\ \ \ \ \ \ \ \ int\ regionX\ \=\ globalX\ /\ 512;\n\ \ \ \ \ \ \ \ int\ regionZ\ \=\ globalZ\ /\ 512;\n\ \ \ \ \ \ \ \ Region\ r\ \=\ null;\n\ \ \ \ \ \ \ \ try\ {\n\ \ \ \ \ \ \ \ r\ \=\ regions[regionX+shiftX][regionZ+shiftZ];\n\ \ \ \ \ \ \ \ }\ catch\ (ArrayIndexOutOfBoundsException\ aoe)\ {}\ //r\ stays\ null\n\ \ \ \ \ \ \ \ if\ (r\ \=\=\ null)\ {return\ null;}\n\ \ \ \ \ \ \ \ int\ chunkX\ \=\ globalX\ %\ 32;\n\ \ \ \ \ \ \ \ int\ chunkZ\ \=\ globalZ\ %\ 32;\n\ \ \ \ \ \ \ \ int\ internalChunkX\ \=\ globalX\ %\ 16;\n\ \ \ \ \ \ \ \ int\ internalChunkZ\ \=\ globalZ\ %\ 16;\n\ \ \ \ \ \ \ \ Chunk\ c\ \=\ r.getChunk(chunkX,\ chunkZ);\n\ \ \ \ \ \ \ \ if\ (c\ \=\=\ null)\ {return\ null;}\n\ \ \ \ \ \ \ \ return\ c.getBlock(internalChunkX,\ globalY,\ internalChunkZ);\n\ \ \ \ }\n\ \ \ \ public\ void\ setBLock(int\ globalX,\ int\ globalY,\ int\ globalZ,\ Block\ block)\ {\n\ \ \ \ \ \ \ \ int\ regionX\ \=\ globalX\ /\ 512;\n\ \ \ \ \ \ \ \ int\ regionZ\ \=\ globalZ\ /\ 512;\n\ \ \ \ \ \ \ \ Region\ r\ \=\ null;\n\ \ \ \ \ \ \ \ try\ {\n\ \ \ \ \ \ \ \ r\ \=\ regions[regionX+shiftX][regionZ+shiftZ];\n\ \ \ \ \ \ \ \ }\ catch\ (ArrayIndexOutOfBoundsException\ aoe)\ {}\ //r\ stays\ null\n\ \ \ \ \ \ \ \ if\ (r\ \=\=\ null)\ {return;}\n\ \ \ \ \ \ \ \ int\ chunkX\ \=\ globalX\ %\ 32;\n\ \ \ \ \ \ \ \ int\ chunkZ\ \=\ globalZ\ %\ 32;\n\ \ \ \ \ \ \ \ int\ internalChunkX\ \=\ globalX\ %\ 16;\n\ \ \ \ \ \ \ \ int\ internalChunkZ\ \=\ globalZ\ %\ 16;\n\ \ \ \ \ \ \ \ Chunk\ c\ \=\ r.getChunk(chunkX,\ chunkZ);\n\ \ \ \ \ \ \ \ if\ (c\ \=\=\ null)\ {return;}\n\ \ \ \ \ \ \ \ c.setBlock(internalChunkX,\ globalY,\ internalChunkZ,\ block);\n\ \ \ \ }\n\ \ \ \ \n
+comment4.params=x\ z
+comment4.target=Region\ getRegion(int,\ int)
+comment5.params=
+comment5.target=int[]\ getLowestRegion()
+comment6.params=
+comment6.target=int[]\ getHighestRegion()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

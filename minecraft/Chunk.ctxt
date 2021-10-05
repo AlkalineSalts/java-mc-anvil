@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Chunk
+comment0.text=\n\ Write\ a\ description\ of\ class\ Chunk\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=uncompressedNBT\ sPE
+comment1.target=Chunk(byte[],\ int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Chunk\n
+comment10.params=x\ z
+comment10.target=Biome\ getBiome(int,\ int)
+comment2.params=
+comment2.target=Chunk()
+comment3.params=x\ y\ z
+comment3.target=Block\ getBlock(int,\ int,\ int)
+comment4.params=x\ y\ z\ block
+comment4.target=void\ setBlock(int,\ int,\ int,\ Block)
+comment5.params=x\ globalY\ z\ block
+comment5.target=void\ setHeightmap(int,\ int,\ int,\ Block)
+comment6.params=
+comment6.target=int\ getLastModified()
+comment7.params=x\ z
+comment7.target=int\ getHeightMap(int,\ int)
+comment8.params=
+comment8.target=void\ updateTimeStamp()
+comment9.params=biome\ x\ z
+comment9.target=void\ setBiome(Biome,\ int,\ int)
+numComments=11

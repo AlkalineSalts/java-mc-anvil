@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=RegionCheck
+comment0.text=\n\ The\ test\ class\ RegionCheck.\n\n\ @author\ \ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=RegionCheck()
+comment1.text=\n\ Default\ constructor\ for\ test\ class\ RegionCheck\n
+comment2.params=
+comment2.target=void\ setUp()
+comment2.text=\n\ Sets\ up\ the\ test\ fixture.\n\n\ Called\ before\ every\ test\ case\ method.\n
+comment3.params=
+comment3.target=void\ tearDown()
+comment3.text=\n\ Tears\ down\ the\ test\ fixture.\n\n\ Called\ after\ every\ test\ case\ method.\n
+comment4.params=
+comment4.target=void\ testBlockData()
+comment5.params=
+comment5.target=void\ testBlockDataChange()
+comment6.params=
+comment6.target=void\ testHeightMap()
+comment7.params=
+comment7.target=void\ chunkSetBlockTest()
+comment8.params=
+comment8.target=void\ heightMapTest()
+comment9.params=
+comment9.target=void\ emptyChunkWorks()
+numComments=10
